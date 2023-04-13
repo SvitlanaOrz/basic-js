@@ -13,23 +13,31 @@ const { NotImplementedError } = require("../extensions/index.js");
  * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
  *
  */
-function transform(/*arr*/) {
-  throw new NotImplementedError("Not implemented");
-  if (Array.isArray(arr)) {
-    let res = [];
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] === "--discard-next") {
-        i++;
-      } else if (arr[i] === "--discard-prev") {
-        res.pop(arr[i] - 1);
-      } else if (arr[i] === "--double-next") {
+function transform(arr) {
+  // throw new NotImplementedError("Not implemented");
+  if (!Array.isArray(arr)) {
+    throw new Error("'arr' parameter must be an instance of the Array!");
+  }
+
+  const res = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === "--discard-next") {
+      i++;
+    } else if (arr[i] === "--discard-prev") {
+      if (res.length > 0 && arr[i - 2] !== "--discard-next") {
+        res.pop();
+      }
+    } else if (arr[i] === "--double-next") {
+      if (i < arr.length - 1) {
         res.push(arr[i + 1]);
-      } else if (arr[i] === "--double-prev") {
+      }
+    } else if (arr[i] === "--double-prev") {
+      if (i > 0 && arr[i - 2] !== "--discard-next") {
         res.push(arr[i - 1]);
-      } else res.push(arr[i]);
-    }
-    return res;
-  } else return `'arr' parameter must be an instance of the Array!`;
+      }
+    } else res.push(arr[i]);
+  }
+  return res;
 }
 
 module.exports = {

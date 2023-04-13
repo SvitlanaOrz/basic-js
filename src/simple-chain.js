@@ -5,9 +5,7 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 const chainMaker = {
-  constructor() {
-    this.chain = [];
-  },
+  chain: [],
 
   getLength() {
     // throw new NotImplementedError("Not implemented");
@@ -16,14 +14,18 @@ const chainMaker = {
 
   addLink(value) {
     // throw new NotImplementedError("Not implemented");
-    this.chain.push(`( ${value} )`);
+    if (value === undefined) {
+      this.chain.push("(  )");
+    } else {
+      this.chain.push(`( ${value} )`);
+    }
     return this;
   },
   removeLink(position) {
     // throw new NotImplementedError("Not implemented");
     if (
       !Number.isInteger(position) ||
-      position < 1 ||
+      position <= 0 ||
       position > this.chain.length
     ) {
       this.chain = [];
