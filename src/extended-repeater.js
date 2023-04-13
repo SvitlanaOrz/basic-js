@@ -16,7 +16,7 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function repeater(str, options) {
-  throw new NotImplementedError("Not implemented");
+  // throw new NotImplementedError("Not implemented");
 
   const repeatTimes = options.repeatTimes || 1;
   const separator = options.separator || "+";

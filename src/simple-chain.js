@@ -10,17 +10,17 @@ const chainMaker = {
   },
 
   getLength() {
-    throw new NotImplementedError("Not implemented");
+    // throw new NotImplementedError("Not implemented");
     return this.chain.length;
   },
 
   addLink(value) {
-    throw new NotImplementedError("Not implemented");
+    // throw new NotImplementedError("Not implemented");
     this.chain.push(`( ${value} )`);
     return this;
   },
   removeLink(position) {
-    throw new NotImplementedError("Not implemented");
+    // throw new NotImplementedError("Not implemented");
     if (
       !Number.isInteger(position) ||
       position < 1 ||
@@ -34,12 +34,12 @@ const chainMaker = {
   },
 
   reverseChain() {
-    throw new NotImplementedError("Not implemented");
+    // throw new NotImplementedError("Not implemented");
     this.chain.reverse();
     return this;
   },
   finishChain() {
-    throw new NotImplementedError("Not implemented");
+    // throw new NotImplementedError("Not implemented");
     const result = this.chain.join("~~");
     this.chain = [];
     return result;

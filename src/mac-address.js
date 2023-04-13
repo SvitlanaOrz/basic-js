@@ -15,7 +15,7 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function isMAC48Address(n) {
-  throw new NotImplementedError("Not implemented");
+  // throw new NotImplementedError("Not implemented");
   const hexDigits = "0123456789ABCDEF";
 
   let arr = n.split("-");

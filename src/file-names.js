@@ -16,7 +16,7 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function renameFiles(names) {
-  throw new NotImplementedError("Not implemented");
+  // throw new NotImplementedError("Not implemented");
 
   let arr = [];
   for (let i = 0; i < names.length; i++) {

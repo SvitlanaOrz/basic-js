@@ -15,7 +15,7 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function calculateHanoi(disksNumber, turnsSpeed) {
-  throw new NotImplementedError("Not implemented");
+  // throw new NotImplementedError("Not implemented");
 
   let stepNumber = 2 ** disksNumber - 1;
   let seconds = Math.floor(stepNumber / (turnsSpeed / 3600));

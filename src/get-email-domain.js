@@ -11,7 +11,7 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function getEmailDomain(email) {
-  throw new NotImplementedError("Not implemented");
+  // throw new NotImplementedError("Not implemented");
 
   let arr = email.split("");
   let res = [];

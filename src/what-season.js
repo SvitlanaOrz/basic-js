@@ -12,7 +12,7 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function getSeason(date) {
-  // throw new NotImplementedError("Not implemented");
+  throw new NotImplementedError("Not implemented");
   const month = date.getMonth();
 
   if (date.toString() == Date.prototype.toString.call(new Date())) {
